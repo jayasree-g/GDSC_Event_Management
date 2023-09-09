@@ -100,7 +100,7 @@ Here are some screenshots from the EventHub application to give you a glimpse of
 ![User Portal](https://github.com/jayasree-g/GDSC_Event_Management/assets/105725585/e2f7e8c4-ac5c-434c-beb8-36a43e4d72be)
 
 #### Click on the button to Register or Unregister
-![Alt text](image.png)
+![Registering](https://github.com/jayasree-g/GDSC_Event_Management/assets/105725585/1f5eb9ef-ecdc-461a-b131-d6f90bd40a6b)
 
 
 *Description: Regular users can view a list of events on the User Portal and register for events that interest them.*
