@@ -7,7 +7,7 @@ EventHub is a web application that simplifies event management by providing an e
 1. **Sign-up Page:**
 
    - New users can register for an account.
-   - Registration includes providing a username, email, and password.
+   - Registration includes providing a fullname, email, and password.
    - All users (excluding admins) can sign up.
 
 2. **Login Page:**

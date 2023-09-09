@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from "react";
-
-interface PopupProps {
-  onClose: () => void;
+interface props {
+  message: string;
+  isVisible: boolean;
 }
-
-const Popup: React.FC<PopupProps> = ({ onClose }) => {
-  const [isVisible, setIsVisible] = useState(true);
-
+function Popup({ isVisible, message }: props) {
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-      onClose();
-    }, 5000);
+    if (isVisible) {
+      const timer = setTimeout(() => {}, 5000);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [onClose]);
-
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [isVisible]);
+  console.log(isVisible);
   return (
     <div
       className={`fixed inset-0 flex items-center justify-center z-50 ${
@@ -27,10 +23,10 @@ const Popup: React.FC<PopupProps> = ({ onClose }) => {
       }`}
     >
       <div className="bg-gray-800 text-white p-4 rounded shadow-md">
-        <p className="text-center">Login or Sign Up to view the events</p>
+        <p className="text-center">{message}</p>
       </div>
     </div>
   );
-};
+}
 
 export default Popup;

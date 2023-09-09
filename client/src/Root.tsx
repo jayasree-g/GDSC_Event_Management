@@ -9,7 +9,7 @@ function Root() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home darkMode={true} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/SignUp" element={<Signup />} />
         <Route path="/LogIn" element={<Login />} />
         <Route path="/Events" element={<Events/>} />

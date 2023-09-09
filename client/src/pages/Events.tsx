@@ -11,7 +11,7 @@ function Events() {
   if (user) {
     return user.isAdmin ? <AdminPortal /> : <UserPortal />;
   } else {
-    return <Home darkMode={true}/>;
+    return <Home />;
   }
 }
 

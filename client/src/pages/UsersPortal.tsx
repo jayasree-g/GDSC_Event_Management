@@ -37,12 +37,12 @@ function UserPortal() {
     <div className="min-h-full p-4">
       <h2 className="text-2xl font-bold mb-4">User Portal</h2>
       <div>
-        <h3 className="text-xl font-semibold">Available Events</h3>
+        <h3 className="text-xl font-semibold mb-4">Available Events</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {events.map((event) => (
             <div
               key={event.eventId}
-              className="border border-gray-300 rounded p-4 shadow-md"
+              className="shadow-lg max-w-sm hover:scale-105 duration-300 bg-[#1e1e1e] border border-[#323434] p-4"
             >
               <h4 className="text-lg font-semibold">{event.name}</h4>
               <p>Description: {event.description}</p>
@@ -50,7 +50,7 @@ function UserPortal() {
               <p>Location: {event.venue}</p>
               <button
                 onClick={() => handleRegisterForEvent(event.eventId)}
-                className="bg-blue-500 text-white rounded px-3 py-1 mt-2 hover:bg-blue-600"
+                className="bg-[#186d67] text-white rounded px-3 py-1 mt-2 hover:bg-[#183937]"
               >
                 Register
               </button>
@@ -58,7 +58,7 @@ function UserPortal() {
           ))}
         </div>
       </div>
-      <div>
+      {/* <div>
         <h3 className="text-xl font-semibold">Registered Events</h3>
         <ul>
           {registeredEvents.map((event) => (
@@ -68,7 +68,7 @@ function UserPortal() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }

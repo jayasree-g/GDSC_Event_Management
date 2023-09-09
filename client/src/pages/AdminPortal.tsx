@@ -172,7 +172,7 @@ function AdminPortal() {
           {events.map((event) => (
             <div
               key={event.eventId}
-              className="border border-gray-300 rounded p-4 shadow-md"
+              className="shadow-lg max-w-sm hover:scale-105 duration-300 bg-[#1e1e1e] border border-[#323434] p-4"
             >
               <h4 className="text-2xl font-semibold">{event.name}</h4>
               <p>
