@@ -86,6 +86,12 @@ Here are some screenshots from the EventHub application to give you a glimpse of
 
 ![Admin Portal](https://github.com/jayasree-g/GDSC_Event_Management/assets/105725585/12f6d774-218d-4863-895f-5d69ebc2c3d9)
 
+#### Add New Event
+![Add New Event](https://github.com/jayasree-g/GDSC_Event_Management/assets/105725585/e58e9d14-0eae-4ebf-8ff4-dbd98378532d)
+
+#### Edit an Event
+![Edit an Event](https://github.com/jayasree-g/GDSC_Event_Management/assets/105725585/0d6c5bca-fdbc-4ec4-8284-9423e3b1b3b5)
+
 
 *Description: Admin users have access to the Admin Portal, where they can create new events, edit existing events, and manage event details.*
 
