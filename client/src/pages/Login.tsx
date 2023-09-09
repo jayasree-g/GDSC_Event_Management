@@ -44,8 +44,9 @@ const Login = () => {
       });
       if (!loggedInUser) {
         <Popup message="Please check your credentials" isVisible={true} />;
-        console.log("Please check your credentials");
+        window.alert("Please check your credentials");
       } else {
+        localStorage.setItem("userIdGDSC", loggedInUser.userId);
         navigate("/Events", { state: { user: loggedInUser } });
       }
     } catch (error) {

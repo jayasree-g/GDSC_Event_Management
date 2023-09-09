@@ -29,8 +29,9 @@ const Signup = () => {
       });
 
       if (!user) {
-        console.log("User already exists");
+        window.alert("User already exists");
       } else {
+        localStorage.setItem("userIdGDSC", user.userId);
         navigate("/Events", { state: { user: user } });
       }
     } catch (error) {
