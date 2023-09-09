@@ -13,6 +13,12 @@ export class UsersService {
 
   async addUser(payload: CreateUserDto): Promise<Users | undefined> {
     try {
+      const existingUser = await this.usersRepository.findOne({
+        where: { email: payload.email },
+      });
+      if (existingUser) {
+        return null;
+      }
       return await this.usersRepository.create(payload);
     } catch (error) {
       console.error('Error while adding a user:', error);
@@ -25,6 +31,20 @@ export class UsersService {
       return await this.usersRepository.findOne({ where: { userId } });
     } catch (error) {
       console.error('Error while getting a user by ID:', error);
+      throw error;
+    }
+  }
+
+  async getUserByMail(query: {
+    email: string;
+    password: string;
+  }): Promise<Users | undefined> {
+    try {
+      return await this.usersRepository.findOne({
+        where: { email: query.email, password: query.password },
+      });
+    } catch (error) {
+      console.error('Error while getting a user:', error);
       throw error;
     }
   }

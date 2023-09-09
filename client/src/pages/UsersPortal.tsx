@@ -34,11 +34,11 @@ function UserPortal() {
   }
 
   return (
-    <div>
+    <div className="min-h-full p-4">
       <h2 className="text-2xl font-bold mb-4">User Portal</h2>
       <div>
         <h3 className="text-xl font-semibold">Available Events</h3>
-        <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {events.map((event) => (
             <div
               key={event.eventId}
@@ -64,7 +64,7 @@ function UserPortal() {
           {registeredEvents.map((event) => (
             <li key={event.eventId} className="mb-2">
               {event.name} - {event.time} - {event.venue} - {event.description}
-              <span className="text-green-500 ml-2">Registered</span>
+              <span className="bg-[#186d67] ml-2">Registered</span>
             </li>
           ))}
         </ul>

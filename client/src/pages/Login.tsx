@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { createUser } from "../Apis/users";
+import { getUserByMail } from "../Apis/users";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Login = () => {
   const [formData, setFormData] = useState({
-    username: "",
     email: "",
     password: "",
   });
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
@@ -16,36 +15,26 @@ const Signup = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      const user = await createUser(formData);
-      setUser(user);
+      const loggedInUser = await getUserByMail(formData);
+      setUser(loggedInUser);
       setFormData({
-        username: "",
         email: "",
         password: "",
       });
-      navigate("/Events", { state: { user: user } });
+      navigate("/Events", { state: { user: loggedInUser } });
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <div className="p-8 rounded shadow-md">
-        <h2 className="text-2xl font-bold mb-4">Sign-up</h2>
+        <h2 className="text-2xl font-bold mb-4">Login</h2>
         <form onSubmit={handleSubmit} className="text-black">
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={formData.username}
-            onChange={handleChange}
-            className="block w-full p-2 border rounded mb-2"
-            required
-          />
           <input
             type="email"
             name="email"
@@ -66,9 +55,9 @@ const Signup = () => {
           />
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+            className="w-full bg-blue-500 p-2 rounded hover:bg-blue-600"
           >
-            Register
+            Login
           </button>
         </form>
       </div>
@@ -76,4 +65,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

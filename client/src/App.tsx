@@ -6,10 +6,10 @@ import Navbar from "./pages/Navbar";
 
 function App() {
   return (
-    <>
+    <div className="bg-[#191919] min-h-screen text-white">
       <Navbar />
       <Root />
-    </>
+    </div>
   );
 }
 

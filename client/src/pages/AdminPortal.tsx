@@ -47,6 +47,22 @@ function AdminPortal() {
 
   async function handleCreateEvent() {
     try {
+      if (
+        !newEvent.name ||
+        !newEvent.description ||
+        !newEvent.time ||
+        !newEvent.venue
+      ) {
+        document.querySelectorAll(".input-validation").forEach((input) => {
+          if (!(input as HTMLInputElement).value) {
+            input.classList.add("border-red-500");
+          } else {
+            input.classList.remove("border-red-500");
+          }
+        });
+        return;
+      }
+
       const createdEvent = await createEvent(newEvent);
       setEvents([...events, createdEvent]);
       setNewEvent({
@@ -81,16 +97,16 @@ function AdminPortal() {
   };
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-4">Admin Portal</h2>
+    <div className="p-6">
+      <h2 className="text-2xl font-bold mb-4 ">Admin Portal</h2>
       <button
         onClick={() => setIsCreatingEvent(true)}
-        className="bg-blue-500 text-white rounded px-3 py-1 hover:bg-blue-600"
+        className="bg-[#186d67] text-white rounded px-3 py-1 hover:bg-[#183937] mt-6 mb-3"
       >
         Add New Event
       </button>
       {isCreatingEvent && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 text-black">
           <div className="bg-white p-4 rounded shadow-md">
             <span
               className="absolute top-2 right-2 text-gray-600 cursor-pointer"
@@ -106,7 +122,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setNewEvent({ ...newEvent, name: e.target.value })
               }
-              className="border border-gray-300 rounded px-2 py-1 w-full mb-2"
+              className="border border-gray-300 rounded px-2 py-1 w-full mb-2 input-validation"
             />
             <input
               type="text"
@@ -115,7 +131,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setNewEvent({ ...newEvent, description: e.target.value })
               }
-              className="border border-gray-300 rounded px-2 py-1 w-full mb-2"
+              className="border border-gray-300 rounded px-2 py-1 w-full mb-2 input-validation"
             />
             <input
               type="text"
@@ -124,7 +140,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setNewEvent({ ...newEvent, time: e.target.value })
               }
-              className="border border-gray-300 rounded px-2 py-1 w-full mb-2"
+              className="border border-gray-300 rounded px-2 py-1 w-full mb-2 input-validation"
             />
             <input
               type="text"
@@ -133,7 +149,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setNewEvent({ ...newEvent, venue: e.target.value })
               }
-              className="border border-gray-300 rounded px-2 py-1 w-full mb-2"
+              className="border border-gray-300 rounded px-2 py-1 w-full mb-2 input-validation"
             />
             <button
               onClick={handleCreateEvent}
@@ -158,14 +174,23 @@ function AdminPortal() {
               key={event.eventId}
               className="border border-gray-300 rounded p-4 shadow-md"
             >
-              <h4 className="text-lg font-semibold">{event.name}</h4>
-              <p>Description: {event.description}</p>
-              <p>Date: {event.time}</p>
-              <p>Location: {event.venue}</p>
+              <h4 className="text-2xl font-semibold">{event.name}</h4>
+              <p>
+                <span className=" font-semibold text-lg">Event Story!: </span>
+                {event.description}
+              </p>
+              <p>
+                <span className=" font-semibold text-lg">Happening on: </span>
+                {event.time}
+              </p>
+              <p>
+                <span className=" font-semibold text-lg">Where to be: </span>
+                {event.venue}
+              </p>
               <div className="mt-2">
                 <button
                   onClick={() => setEditEvent(event)}
-                  className="bg-green-500 text-white rounded px-2 py-1 ml-2 hover:bg-green-600"
+                  className="bg-[#186d67] text-white rounded px-2 py-1 ml-2 hover:bg-[#1e4b48]"
                 >
                   Edit
                 </button>
@@ -181,7 +206,7 @@ function AdminPortal() {
         </div>
       </div>
       {editEvent && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 text-black">
           <div className="bg-white p-4 rounded shadow-md">
             <span
               className="absolute top-2 right-2 text-gray-600 cursor-pointer"

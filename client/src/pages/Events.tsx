@@ -7,11 +7,11 @@ import { useLocation } from "react-router-dom";
 function Events() {
   const location = useLocation();
   const user = location.state?.user;
-  console.log(user);
+
   if (user) {
     return user.isAdmin ? <AdminPortal /> : <UserPortal />;
   } else {
-    return <Home />;
+    return <Home darkMode={true}/>;
   }
 }
 

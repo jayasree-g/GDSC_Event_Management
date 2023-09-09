@@ -1,4 +1,12 @@
-import { Controller, Get, Param, Delete, Post, Body } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Delete,
+  Post,
+  Body,
+  Query,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { ApiTags } from '@nestjs/swagger';
 import { CreateUserDto } from './CreateUserDto';
@@ -17,6 +25,11 @@ export class UsersController {
   @Get('/get-user/:id')
   async getUserById(@Param('id') userId: number) {
     return this.usersService.getUserById(userId);
+  }
+
+  @Get('/get-user-by-mail')
+  async getUserByMail(@Query() query: { email: string; password: string }) {
+    return this.usersService.getUserByMail(query);
   }
 
   @Get('/is-admin/:id')
