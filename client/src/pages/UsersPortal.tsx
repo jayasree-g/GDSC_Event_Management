@@ -38,16 +38,16 @@ function UserPortal() {
       <h2 className="text-2xl font-bold mb-4">User Portal</h2>
       <div>
         <h3 className="text-xl font-semibold mb-4">Available Events</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="flex flex-col gap-3">
           {events.map((event) => (
             <div
               key={event.eventId}
-              className="shadow-lg max-w-sm hover:scale-105 duration-300 bg-[#1e1e1e] border border-[#323434] p-4"
+              className="shadow-lg w-screen hover:scale-105 duration-300 bg-[#1e1e1e] border border-[#323434] p-4"
             >
-              <h4 className="text-lg font-semibold">{event.name}</h4>
-              <p>Description: {event.description}</p>
-              <p>Date: {event.time}</p>
-              <p>Location: {event.venue}</p>
+              <h4 className="text-lg font-semibold mb-3">{event.name}</h4>
+              <p>What's Happening: {event.description}</p>
+              <p>When: {event.time}</p>
+              <p>Where: {event.venue}</p>
               <button
                 onClick={() => handleRegisterForEvent(event.eventId)}
                 className="bg-[#186d67] text-white rounded px-3 py-1 mt-2 hover:bg-[#183937]"

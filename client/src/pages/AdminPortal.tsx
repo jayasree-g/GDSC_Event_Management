@@ -101,7 +101,7 @@ function AdminPortal() {
       <h2 className="text-2xl font-bold mb-4 ">Admin Portal</h2>
       <button
         onClick={() => setIsCreatingEvent(true)}
-        className="bg-[#186d67] text-white rounded px-3 py-1 hover:bg-[#183937] mt-6 mb-3"
+        className="bg-[#186d67] text-white rounded px-3 py-1 hover:bg-[#183937] my-3"
       >
         Add New Event
       </button>
@@ -167,24 +167,24 @@ function AdminPortal() {
         </div>
       )}
       <div>
-        <h3 className="text-xl font-semibold">Event List</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <h3 className="text-xl font-semibold my-3">Events List</h3>
+        <div className="flex flex-col gap-3">
           {events.map((event) => (
             <div
               key={event.eventId}
-              className="shadow-lg max-w-sm hover:scale-105 duration-300 bg-[#1e1e1e] border border-[#323434] p-4"
+              className="shadow-lg w-screen hover:scale-105 duration-300 bg-[#1e1e1e] border border-[#323434] p-4"
             >
-              <h4 className="text-2xl font-semibold">{event.name}</h4>
+              <h4 className="text-2xl font-semibold mb-3">{event.name}</h4>
               <p>
-                <span className=" font-semibold text-lg">Event Story!: </span>
+                <span className=" font-semibold text-lg">What's Happening: </span>
                 {event.description}
               </p>
               <p>
-                <span className=" font-semibold text-lg">Happening on: </span>
+                <span className=" font-semibold text-lg">When: </span>
                 {event.time}
               </p>
               <p>
-                <span className=" font-semibold text-lg">Where to be: </span>
+                <span className=" font-semibold text-lg">Where: </span>
                 {event.venue}
               </p>
               <div className="mt-2">
