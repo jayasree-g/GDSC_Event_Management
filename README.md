@@ -58,6 +58,12 @@ To run EventHub locally, follow these steps:
 4. **Create the .env File:**
    Duplicate the .env.example file and rename it to `.env`. Open the newly created .env file and replace the placeholder values with the actual values. DB_NAME is the name of the new database you've created.
 
+5. **Run Client and Server**
+    In both the terminals, run the following comman
+   ```
+   npm run start
+   ```
+   
 ## Screenshots
 
 Here are some screenshots from the EventHub application to give you a glimpse of its user interface:
