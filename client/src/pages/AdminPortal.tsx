@@ -124,7 +124,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setNewEvent({ ...newEvent, name: e.target.value })
               }
-              className="border border-[#323434] rounded px-2 py-1 w-full mb-4 input-validation bg-[#323434]"
+              className="border border-[#323434] rounded px-2 py-1 w-[80vw] mb-4 input-validation bg-[#323434]"
             />
             <input
               type="text"
@@ -133,7 +133,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setNewEvent({ ...newEvent, description: e.target.value })
               }
-              className="border border-[#323434] rounded px-2 py-1 w-full mb-4 input-validation bg-[#323434]"
+              className="border border-[#323434] rounded px-2 py-1 w-[80vw] mb-4 input-validation bg-[#323434]"
             />
             <input
               type="text"
@@ -142,7 +142,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setNewEvent({ ...newEvent, time: e.target.value })
               }
-              className="border border-[#323434] rounded px-2 py-1 w-full mb-4 input-validation bg-[#323434]"
+              className="border border-[#323434] rounded px-2 py-1 w-[80vw] mb-4 input-validation bg-[#323434]"
             />
             <input
               type="text"
@@ -151,7 +151,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setNewEvent({ ...newEvent, venue: e.target.value })
               }
-              className="border border-[#323434] rounded px-2 py-1 w-full mb-4 input-validation bg-[#323434]"
+              className="border border-[#323434] rounded px-2 py-1 w-[80vw] mb-4 input-validation bg-[#323434]"
             />
             <button
               onClick={handleCreateEvent}
@@ -170,7 +170,7 @@ function AdminPortal() {
       )}
       <div>
         <h3 className="text-xl font-semibold my-3">Events List</h3>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 items-center">
           {events.map((event) => (
             <div
               key={event.eventId}
@@ -226,7 +226,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setEditEvent({ ...editEvent, name: e.target.value })
               }
-              className="border border-[#323434] rounded px-2 py-1 w-full mb-4 input-validation bg-[#323434]"
+              className="border border-[#323434] rounded px-2 py-1 w-[80vw] mb-4 input-validation bg-[#323434]"
             />
             <input
               type="text"
@@ -235,7 +235,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setEditEvent({ ...editEvent, description: e.target.value })
               }
-              className="border border-[#323434] rounded px-2 py-1 w-full mb-4 input-validation bg-[#323434]"
+              className="border border-[#323434] rounded px-2 py-1 w-[80vw] mb-4 input-validation bg-[#323434]"
             />
             <input
               type="text"
@@ -244,7 +244,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setEditEvent({ ...editEvent, time: e.target.value })
               }
-              className="border border-[#323434] rounded px-2 py-1 w-full mb-4 input-validation bg-[#323434]"
+              className="border border-[#323434] rounded px-2 py-1 w-[80vw] mb-4 input-validation bg-[#323434]"
             />
             <input
               type="text"
@@ -253,7 +253,7 @@ function AdminPortal() {
               onChange={(e) =>
                 setEditEvent({ ...editEvent, venue: e.target.value })
               }
-              className="border border-[#323434] rounded px-2 py-1 w-full mb-4 input-validation bg-[#323434]"
+              className="border border-[#323434] rounded px-2 py-1 w-[80vw] mb-4 input-validation bg-[#323434]"
             />
             <button
               onClick={() => handleEditEvent(editEvent.eventId)}
