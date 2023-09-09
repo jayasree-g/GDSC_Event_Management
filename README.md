@@ -57,3 +57,41 @@ To run EventHub locally, follow these steps:
 
 4. **Create the .env File:**
    Duplicate the .env.example file and rename it to `.env`. Open the newly created .env file and replace the placeholder values with the actual values. DB_NAME is the name of the new database you've created.
+
+## Screenshots
+
+Here are some screenshots from the EventHub application to give you a glimpse of its user interface:
+
+### Home Page
+
+![Home Page](https://github.com/jayasree-g/GDSC_Event_Management/assets/105725585/4972e14c-f1ef-46ef-bfb7-438e88ab03dd)
+
+*Description: This is the landing page*
+
+### Sign-up Page
+
+![Sign-up Page](https://github.com/jayasree-g/GDSC_Event_Management/assets/105725585/5f8ff76f-0924-4113-9d28-aa3fe282ab59)
+
+
+*Description: This is the sign-up page where new users can register for an account by providing their full name, email, and password.*
+
+### Login Page
+
+![Login Page](https://github.com/jayasree-g/GDSC_Event_Management/assets/105725585/7c67c52d-72f6-4113-bcee-a72cb081517a)
+
+
+*Description: Registered users can securely log in from this page by entering their email and password.*
+
+### Admin Portal
+
+![Admin Portal](https://github.com/jayasree-g/GDSC_Event_Management/assets/105725585/12f6d774-218d-4863-895f-5d69ebc2c3d9)
+
+
+*Description: Admin users have access to the Admin Portal, where they can create new events, edit existing events, and manage event details.*
+
+### User Portal
+
+![User Portal](https://github.com/jayasree-g/GDSC_Event_Management/assets/105725585/e2f7e8c4-ac5c-434c-beb8-36a43e4d72be)
+
+
+*Description: Regular users can view a list of events on the User Portal and register for events that interest them.*
